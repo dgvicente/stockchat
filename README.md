@@ -1,2 +1,7 @@
-# stockchat
-Jobsity stockchat
+# StockChat
+
+##Chat
+
+##Robot
+
+##Limitations
