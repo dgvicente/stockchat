@@ -19,14 +19,16 @@ Made with Python3, Redis, Django 2.2.6, SQLite (recommended to change if some ac
 
 `python3 -m unittest discover`
 
-##Project components
-###Chat
+
+## Project components
+
+### Chat
 App mainly based in [django-channels](https://channels.readthedocs.io/en/latest/) to communicate with Redis.
 
-###Robot-API
+### Stock-API (in package chatbot, for the future evolution)
 Wrapper for requests made to the external API that provides the stocks values. 
 
-##Limitations
+## Limitations
 - User management is non existent (and security that comes with it)
 - Chat doesn't load all messages (so they are all lost if browser is refreshed)
 - No index page is defined (404 returned in that case)
