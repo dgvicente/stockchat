@@ -14,7 +14,7 @@ class TestStockApiClient(TestCase):
         self.assertEqual(company_name, api_response.name)
         self.assertGreater(api_response.value, 0)
 
-    @patch('chatbot.api_client.requests.get')
+    @patch('stockapi.api_client.requests.get')
     def test_should_parse_and_return_stock_value_when_it_is_returned(self, mock_get):
         random_value = random.randint(1, 500)
         response_content = MagicMock()
@@ -29,7 +29,7 @@ class TestStockApiClient(TestCase):
         self.assertEqual(company_name, api_response.name)
         self.assertEqual(random_value, api_response.value)
 
-    @patch('chatbot.api_client.requests.get')
+    @patch('stockapi.api_client.requests.get')
     def test_should_return_none_when_no_value_is_returned_from_the_api(self, mock_get):
         response_content = MagicMock()
         response_content.decode.return_value = \

@@ -34,7 +34,7 @@ INSTALLED_APPS = [
     'channels',
     'requests',
     'chat.apps.ChatConfig',
-    'chatbot.apps.ChatbotConfig',
+    'stockapi.apps.StockapiConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

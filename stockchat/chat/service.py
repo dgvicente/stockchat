@@ -1,5 +1,5 @@
 import re
-from .chatbot_api_client import ChatbotApiClient
+from .stock_api_client import StockApiClient
 from .definitions import BOT_NAME, MESSAGE_REGEX
 from .models import ChatMessage
 
@@ -11,7 +11,7 @@ class ReplyService:
         matches = re.match(MESSAGE_REGEX, message.message)
         if matches:
             company = matches.group('search')
-            value_for_company = ChatbotApiClient.get_stock_value_for_company(company)
+            value_for_company = StockApiClient.get_stock_value_for_company(company)
             return ChatMessage(BOT_NAME, ReplyService.__build_message_for(value_for_company))
         else:
             return None

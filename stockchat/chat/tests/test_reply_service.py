@@ -2,13 +2,13 @@ from unittest import TestCase
 from unittest.mock import patch
 
 from ..models import ChatMessage
-from ..chatbot_api_client import ApiResponseModel
+from ..stock_api_client import ApiResponseModel
 from ..service import ReplyService
 
 
 class TestReplyService(TestCase):
 
-    @patch('chat.chatbot_api_client.ChatbotApiClient.get_stock_value_for_company')
+    @patch('chat.stock_api_client.StockApiClient.get_stock_value_for_company')
     def test_should_invoke_api_when_given_message_matches_defined_regex(self, mock_get_value):
         mock_get_value.return_value = ApiResponseModel("aapl", 234)
         message = ChatMessage("user", "/stock=aapl.us")
